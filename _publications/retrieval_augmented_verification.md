@@ -1,0 +1,14 @@
+---
+title: "Retrieval Augmented Verification: Unveiling Disinformation with Structured Representations for Zero-Shot Real-Time Evidence-guided Fact-Checking of Multi-modal Social media posts"
+collection: publications
+category: preprints
+permalink: /publication/retrieval_augmented_verification
+excerpt: 'Social Media posts, where real images are unscrupulously reused along with provocative text to promote a particular idea, have been one of the major sources of disinformation. By design, these claims are without editorial oversight and accessible to a vast population who otherwise may not have access to multiple information sources. This implies the need to fact-check these posts and clearly explain which parts of the posts are fake. In the supervised learning setup, this is often reduced to a binary classification problem, neglecting all intermediate stages. Further, these claims often involve recent events on which systems trained on historical data are prone to fail. In this work, we propose a zero-shot approach by retrieving real-time web-scraped evidence from multiple news websites and matching them with the claim text and image using pretrained language vision systems. We propose a graph structured representation, which a) allows us to gather evidence automatically and b) helps generate interpretable results by explicitly pointing out which parts of the claim can not be verified. Our zero-shot method, with improved interpretability, generates competitive results against the state-of-the-art methods.'
+date: 04/2024
+venue: #'Journal 1'
+slidesurl: #
+paperurl: 'https://arxiv.org/abs/2404.10702'
+citation: 'A. U. Dey, A. Llabrés, E. Valveny, and D. Karatzas, “Retrieval Augmented Verification: Unveiling Disinformation with Structured Representations for Zero-Shot Real-Time Evidence-guided Fact-Checking of Multi-modal Social media posts,” Apr. 29, 2024, arXiv: arXiv:2404.10702. doi: 10.48550/arXiv.2404.10702.'
+---
+
+The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
