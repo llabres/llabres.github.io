@@ -11,7 +11,8 @@ redirect_from:
 
 I'm Artemis, a PhD student at the [Computer Vision Center (CVC)](http://www.cvc.uab.es/ "CVC's Homepage"), in the Vision and Language group I'm doing research on multimodal models for Document Understanding.
 
-## Experience
+Experience
+======
 - Research Engineer at [Computer Vision Center (CVC)](http://www.cvc.uab.es/ "CVC's Homepage")  
   🗓️ 09 2022 -- _present_
   - Research Multimodal Transformers for Document Question Answering.
@@ -37,7 +38,8 @@ I'm Artemis, a PhD student at the [Computer Vision Center (CVC)](http://www.cvc.
   
    - Lecturer in an introductory Python course for scientific programming for members of the _Societat Catalana de Nanociència i Nanotecnologia_.
 
-## Education
+Education
+======
 - [Master’s Degree in Research and Innovation in Computer based Science and Engineering](https://www.uab.cat/web/estudiar/official-master-s-degrees/general-information-1096480962610.html?param1=1345875382068) at [Universitat Autònoma de Barcelona](https://www.uab.cat/web/universitat-autonoma-de-barcelona-1345467954774.html)  
 🗓️ 09 2023 -- 07 2024
 
@@ -62,6 +64,4 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
