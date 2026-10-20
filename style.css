@@ -1,0 +1,83 @@
+:root {
+  --bg: #ffffff;
+  --text: #1f2328;
+  --muted: #59636e;
+  --link: #0969da;
+  --border: #d1d9e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --text: #e6edf3;
+    --muted: #9198a1;
+    --link: #4493f8;
+    --border: #30363d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+main, footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+main { padding-top: 48px; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 { margin: 0; font-size: 2rem; }
+h2 { font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-top: 48px; }
+
+.about { display: flex; gap: 32px; align-items: flex-start; }
+.photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.role { margin: 4px 0 12px; color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 16px; }
+
+.pubs { padding-left: 20px; }
+.pubs li { margin-bottom: 16px; }
+.pubs span { display: block; }
+.pubs .title { font-weight: 600; }
+.pubs .authors, .pubs .venue { color: var(--muted); font-size: 0.95rem; }
+.pubs .venue { font-style: italic; }
+.pubs .authors b { color: var(--text); }
+.pub-links { font-size: 0.9rem; }
+.pubs .award {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.4;
+  margin-left: 6px;
+  padding: 1px 8px;
+  border: 1px solid var(--link);
+  border-radius: 999px;
+  color: var(--link);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  padding-bottom: 32px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+  .about { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+  .links { justify-content: center; }
+  main { padding-top: 32px; }
+}
