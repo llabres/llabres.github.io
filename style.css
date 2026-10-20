@@ -52,6 +52,7 @@ h2 { font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom:
 .pubs .authors, .pubs .venue { color: var(--muted); font-size: 0.95rem; }
 .pubs .venue { font-style: italic; }
 .pubs .authors b { color: var(--text); }
+.pubs .note { display: inline; font-size: 0.85rem; font-style: italic; }
 .pub-links { font-size: 0.9rem; }
 .pubs .award {
   display: inline-block;
