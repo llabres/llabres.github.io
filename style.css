@@ -4,6 +4,8 @@
   --muted: #59636e;
   --link: #0969da;
   --border: #d1d9e0;
+  --oral: #1a7f37;
+  --award: #9a6700;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,8 @@
     --muted: #9198a1;
     --link: #4493f8;
     --border: #30363d;
+    --oral: #3fb950;
+    --award: #d29922;
   }
 }
 
@@ -54,19 +58,20 @@ h2 { font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom:
 .pubs .authors b { color: var(--text); }
 .pubs .note { display: inline; font-size: 0.85rem; font-style: italic; }
 .pub-links { font-size: 0.9rem; }
-.pubs .award {
+.pubs .badge {
   display: inline-block;
   white-space: nowrap;
   line-height: 1.4;
   margin-left: 6px;
   padding: 1px 8px;
-  border: 1px solid var(--link);
+  border: 1px solid currentColor;
   border-radius: 999px;
-  color: var(--link);
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 600;
 }
+.pubs .oral { color: var(--oral); }
+.pubs .award { color: var(--award); }
 
 footer {
   margin-top: 48px;
