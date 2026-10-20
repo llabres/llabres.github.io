@@ -36,9 +36,14 @@
       </div>
     </header>
 
-    <section>
-      <h2>Publications</h2>
-      <ol class="pubs">
+    <nav class="tabs" role="tablist">
+      <button role="tab" id="tab-publications" aria-controls="publications" aria-selected="true">Publications</button>
+      <button role="tab" id="tab-events" aria-controls="events" aria-selected="false">Events</button>
+      <button role="tab" id="tab-talks" aria-controls="talks" aria-selected="false">Talks</button>
+    </nav>
+
+    <section id="publications" role="tabpanel" aria-labelledby="tab-publications">
+      <ol class="list">
         <li>
           <span class="title">ICDAR 2026 Competition on Multimodal Reasoning over Documents in Multiple Domains</span>
           <span class="authors"><b>Artemis Llabrés</b>, Marc Serra Ortega, Tomás Ockier, Samuel Ortega Cuadra, Amritpal Singh, Christos Georgakilas, Andrey Barsky, Ernest Valveny, Dimosthenis Karatzas</span>
@@ -95,8 +100,69 @@
         </li>
       </ol>
     </section>
+
+    <section id="events" role="tabpanel" aria-labelledby="tab-events" hidden>
+      <ul class="list">
+        <li>
+          <span class="title">ICDAR 2026 Competition on Multimodal Reasoning over Documents in Multiple Domains</span>
+          <span class="authors">Lead organizer</span>
+          <span class="venue">International Conference on Document Analysis and Recognition (ICDAR), 2026 <span class="badge competition">Competition</span></span>
+          <span class="pub-links"><a href="https://www.docvqa.org/challenges/2026">[Website]</a></span>
+        </li>
+        <li>
+          <span class="title">ComIQ Workshop</span>
+          <span class="authors">Co-organizer</span>
+          <span class="venue">IEEE/CVF International Conference on Computer Vision (ICCV), 2025 <span class="badge workshop">Workshop</span></span>
+          <span class="pub-links"><a href="https://comiq-iccv25.github.io/">[Website]</a></span>
+        </li>
+        <li>
+          <span class="title">6th IAPR TC10/TC11 Summer School on Document Analysis</span>
+          <span class="authors">Co-organizer</span>
+          <span class="venue">Vall de Núria, Catalonia, May 2026 <span class="badge school">School</span></span>
+          <span class="pub-links"><a href="https://ssdag.cvc.uab.es/">[Website]</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="talks" role="tabpanel" aria-labelledby="tab-talks" hidden>
+      <ul class="list">
+        <li>
+          <span class="title">AgriFM-M: Making Sense of Agricultural Management Knowledge through Document Understanding</span>
+          <span class="authors">Introducing AgriScienceFM | AI Foundation Models for Agricultural Sciences – Webinar</span>
+          <span class="venue">Online, September 2026</span>
+          <span class="pub-links"><a href="https://www.linkedin.com/posts/llabres_how-much-knowledge-is-already-there-but-share-7506635653925781506-1M3L/">[Post]</a> <a href="https://www.youtube.com/watch?v=oaaRMm7LTsA">[Video]</a></span>
+        </li>
+        <li>
+          <span class="title">HPC@CVC Lessons on Scaling Up: From 1 GPU to 100s</span>
+          <span class="authors"><b>Artemis Llabrés</b>, Tomás Ockier, Marc Serra Ortega</span>
+          <span class="venue">Computer Vision Center (CVC), May 2026</span>
+          <span class="pub-links"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7465794139306020864/">[Post]</a></span>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <footer>© 2026 Artemis Llabrés</footer>
+
+  <script>
+    const tabs = document.querySelectorAll('[role="tab"]');
+
+    function show(id) {
+      tabs.forEach(tab => {
+        const panel = tab.getAttribute('aria-controls');
+        tab.setAttribute('aria-selected', panel === id);
+        document.getElementById(panel).hidden = panel !== id;
+      });
+    }
+
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      const id = tab.getAttribute('aria-controls');
+      show(id);
+      try { history.replaceState(null, '', '#' + id); } catch (e) {}
+    }));
+
+    const start = location.hash.slice(1);
+    if (document.getElementById(start)?.getAttribute('role') === 'tabpanel') show(start);
+  </script>
 </body>
 </html>

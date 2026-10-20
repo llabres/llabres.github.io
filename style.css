@@ -6,6 +6,9 @@
   --border: #d1d9e0;
   --oral: #1a7f37;
   --award: #9a6700;
+  --competition: #8250df;
+  --workshop: #0969da;
+  --school: #bc4c00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +20,9 @@
     --border: #30363d;
     --oral: #3fb950;
     --award: #d29922;
+    --competition: #a371f7;
+    --workshop: #4493f8;
+    --school: #f0883e;
   }
 }
 
@@ -42,23 +48,37 @@ a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 h1 { margin: 0; font-size: 2rem; }
-h2 { font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-top: 48px; }
+.tabs { display: flex; gap: 24px; margin-top: 48px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tabs button {
+  margin-bottom: -1px;
+  padding: 0 0 4px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tabs button:hover { color: var(--text); }
+.tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--text); }
 
 .about { display: flex; gap: 32px; align-items: flex-start; }
 .photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .role { margin: 4px 0 12px; color: var(--muted); }
 .links { display: flex; flex-wrap: wrap; gap: 16px; }
 
-.pubs { padding-left: 20px; }
-.pubs li { margin-bottom: 16px; }
-.pubs span { display: block; }
-.pubs .title { font-weight: 600; }
-.pubs .authors, .pubs .venue { color: var(--muted); font-size: 0.95rem; }
-.pubs .venue { font-style: italic; }
-.pubs .authors b { color: var(--text); }
-.pubs .note { display: inline; font-size: 0.85rem; font-style: italic; }
+.list { padding-left: 20px; }
+.list li { margin-bottom: 16px; }
+.list span { display: block; }
+.list .title { font-weight: 600; }
+.list .authors, .list .venue { color: var(--muted); font-size: 0.95rem; }
+.list .venue { font-style: italic; }
+.list .authors b { color: var(--text); }
+.list .note { display: inline; font-size: 0.85rem; font-style: italic; }
 .pub-links { font-size: 0.9rem; }
-.pubs .badge {
+.list .badge {
   display: inline-block;
   white-space: nowrap;
   line-height: 1.4;
@@ -70,8 +90,11 @@ h2 { font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom:
   font-style: normal;
   font-weight: 600;
 }
-.pubs .oral { color: var(--oral); }
-.pubs .award { color: var(--award); }
+.list .oral { color: var(--oral); }
+.list .award { color: var(--award); }
+.list .competition { color: var(--competition); }
+.list .workshop { color: var(--workshop); }
+.list .school { color: var(--school); }
 
 footer {
   margin-top: 48px;
