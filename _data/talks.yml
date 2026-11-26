@@ -1,0 +1,18 @@
+# Talks (website "Talks" tab).
+# `event` is shown on the subtitle line; if `authors` is given it is shown there instead.
+- id: agrifm-webinar
+  title: "AgriFM-M: Making Sense of Agricultural Management Knowledge through Document Understanding"
+  event: Introducing AgriScienceFM | AI Foundation Models for Agricultural Sciences – Webinar
+  place: Online, September 2026
+  year: 2026
+  links:
+    post: https://www.linkedin.com/posts/llabres_how-much-knowledge-is-already-there-but-share-7506635653925781506-1M3L/
+    video: https://www.youtube.com/watch?v=oaaRMm7LTsA
+
+- id: hpc-scaling
+  title: "HPC@CVC Lessons on Scaling Up: From 1 GPU to 100s"
+  authors: [Artemis Llabrés, Tomás Ockier, Marc Serra Ortega]
+  place: Computer Vision Center (CVC), May 2026
+  year: 2026
+  links:
+    post: https://www.linkedin.com/feed/update/urn:li:activity:7465794139306020864/

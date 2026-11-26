@@ -1,0 +1,146 @@
+# Publications, newest first (the website and CV keep this order).
+# Fields:
+#   id         unique, used by AutoCV profiles
+#   type       conference | workshop | journal | preprint | thesis
+#   authors    list; mark equal contribution with a trailing "*"
+#   badges     any of: oral, best-student-paper (see BADGES below for labels)
+#   site       false = hidden on website (still available to the CV)
+#   links      paper (official publication), arxiv, code, site (project/paper website), pdf
+#              — shown in the order written
+#   tags       free-form, for CV filtering (e.g. first-author, comics, docvqa)
+
+- id: icdar26-competition
+  title: ICDAR 2026 Competition on Multimodal Reasoning over Documents in Multiple Domains
+  authors: [Artemis Llabrés, Marc Serra Ortega, Tomás Ockier, Samuel Ortega Cuadra, Amritpal Singh, Christos Georgakilas, Andrey Barsky, Ernest Valveny, Dimosthenis Karatzas]
+  venue: International Conference on Document Analysis and Recognition (ICDAR)
+  venue_short: ICDAR
+  year: 2026
+  type: conference
+  badges: [oral]
+  tags: [first-author, docvqa, agents]
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-3-032-36042-7_20
+    arxiv: https://arxiv.org/abs/2609.25055
+    site: https://www.docvqa.org/challenges/2026
+
+- id: adanav
+  title: "AdaNav: Query-Adaptive Multi-granularity Navigation for Long Document Understanding"
+  authors: [Yiming Xu, Eric López, Artemis Llabrés, Maximiliano Hormazábal, Ernest Valveny, Dimosthenis Karatzas]
+  venue: International Conference on Document Analysis and Recognition (ICDAR)
+  venue_short: ICDAR
+  year: 2026
+  type: conference
+  badges: [oral]
+  tags: [docvqa, long-context]
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-3-032-36023-6_4
+
+- id: strategic-navigation
+  title: "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections"
+  authors: [Łukasz Borchmann, Jordy Van Landeghem, Michał Turski, Shreyansh Padarha, Ryan Othniel Kearns, Adam Mahdi, Niels Rogge, Clémentine Fourrier, Siwei Han, Huaxiu Yao, Artemis Llabrés, Yiming Xu, Dimosthenis Karatzas, Hao Zhang, Anupam Datta]
+  venue: International Conference on Machine Learning (ICML)
+  venue_short: ICML
+  year: 2026
+  type: conference
+  badges: [oral]
+  tags: [agents, docvqa]
+  links:
+    paper: https://icml.cc/virtual/2026/oral/71033   # TODO: switch to the PMLR proceedings page once published
+    arxiv: https://arxiv.org/abs/2603.12180
+
+- id: comicspap
+  title: "ComicsPAP: Understanding Comic Strips by Picking the Correct Panel"
+  authors: [Emanuele Vivoli*, Artemis Llabrés*, Mohamed Ali Souibgui, Marco Bertini, Ernest Valveny, Dimosthenis Karatzas]
+  note: "*contributed equally"
+  venue: International Conference on Document Analysis and Recognition (ICDAR)
+  venue_short: ICDAR
+  year: 2025
+  type: conference
+  badges: [oral]
+  tags: [first-author, comics]
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-3-032-04614-7_19
+    arxiv: https://arxiv.org/abs/2503.08561
+
+- id: docvqa-rag
+  title: Enhancing Document VQA Models via Retrieval-Augmented Generation
+  authors: [Eric López, Artemis Llabrés, Ernest Valveny]
+  venue: International Conference on Document Analysis and Recognition (ICDAR)
+  venue_short: ICDAR
+  year: 2025
+  type: conference
+  tags: [docvqa, rag]
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-3-032-09368-4_6
+    arxiv: https://arxiv.org/abs/2508.18984
+
+- id: cosmo
+  title: "CoSMo: A Multimodal Transformer for Page Stream Segmentation in Comic Books"
+  authors: [Marc Serra Ortega, Emanuele Vivoli, Artemis Llabrés, Dimosthenis Karatzas]
+  venue: IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)
+  venue_short: ICCVW
+  year: 2025
+  type: workshop
+  tags: [comics]
+  links:
+    paper: https://ieeexplore.ieee.org/abstract/document/11375802/
+    arxiv: https://arxiv.org/abs/2507.10053
+
+- id: comics-survey
+  title: "One Missing Piece in Vision and Language: A Survey on Comics Understanding"
+  authors: [Emanuele Vivoli, Mohamed Ali Souibgui, Andrey Barsky, Artemis Llabrés, Marco Bertini, Dimosthenis Karatzas]
+  venue: arXiv preprint
+  venue_short: arXiv
+  year: 2024
+  type: preprint
+  tags: [comics, survey]
+  links:
+    arxiv: https://arxiv.org/abs/2409.09502
+
+- id: msc-thesis
+  title: Multi-Page Document Understanding
+  authors: [Artemis Llabrés, Dimosthenis Karatzas, Ernest Valveny]
+  venue: "Master's Thesis, Universitat Autònoma de Barcelona"
+  venue_short: MSc Thesis
+  year: 2024
+  type: thesis
+  site: false
+  tags: [first-author, docvqa]
+  links:
+    paper: https://llabres.github.io/llabres/Multi_Page_Document_Understanding.pdf
+
+- id: image-text-matching-books
+  title: Image-Text Matching for Large-Scale Book Collections
+  authors: [Artemis Llabrés, Arka Ujjal Dey, Dimosthenis Karatzas, Ernest Valveny]
+  venue: International Workshop on Document Analysis Systems (DAS)
+  venue_short: DAS
+  year: 2024
+  type: conference
+  badges: [best-student-paper]
+  tags: [first-author, retrieval]
+  links:
+    paper: https://link.springer.com/chapter/10.1007/978-3-031-70442-0_6
+    arxiv: https://arxiv.org/abs/2407.19812
+
+- id: rav-disinformation
+  title: Retrieval Augmented Verification for Zero-Shot Detection of Multimodal Disinformation
+  authors: [Arka Ujjal Dey, Artemis Llabrés, Ernest Valveny, Dimosthenis Karatzas]
+  venue: arXiv preprint
+  venue_short: arXiv
+  year: 2024
+  type: preprint
+  tags: [disinformation, retrieval]
+  links:
+    arxiv: https://arxiv.org/abs/2404.10702
+
+- id: bsc-thesis
+  title: Multi-Task Document Understanding using Layout+Text to Text Transformer
+  authors: [Artemis Llabrés, Dimosthenis Karatzas]
+  venue: "Bachelor's Thesis, Universitat Autònoma de Barcelona"
+  venue_short: BSc Thesis
+  year: 2022
+  type: thesis
+  site: false
+  tags: [first-author, docvqa]
+  links:
+    paper: https://llabres.github.io/llabres/Multi_Task_Document_Understanding_using_Layout_and_Text_to_Text_Transformer.pdf

@@ -1,0 +1,6 @@
+# CV ONLY — not shown on the website (paper awards also appear as badges via publications.yml).
+- id: das24-best-student-paper
+  title: Best Student Paper Award
+  detail: "16th IAPR International Workshop on Document Analysis Systems (DAS)"
+  date: 2024-08
+  ref: image-text-matching-books

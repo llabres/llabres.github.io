@@ -1,0 +1,41 @@
+# Basic profile. Shown on the website header and used for the CV header.
+name: Artemis Llabrés                 # used to bold your name in author lists
+full_name: Artemis Llabrés Brustenga  # used in the CV header
+role: PhD student · Computer Vision Center (CVC), Universitat Autònoma de Barcelona
+role_short: PhD Student in Multimodal AI   # CV header subtitle
+location: Barcelona, Spain
+website: https://llabres.github.io
+
+# Website bio (HTML allowed). The CV uses `summary` below instead.
+bio:
+  - >-
+    I am part of the <a href="https://vlr.ai">Vision, Language, and Reading Group</a>,
+    where I research multimodal models for document understanding.
+  - >-
+    My work focuses on large-scale training of vision-language models (VLMs), agentic AI systems
+    that can reason and act over complex documents, and efficient VLMs for long-context document
+    understanding, making it possible to process multi-page documents and large collections
+    without prohibitive compute costs.
+
+# CV summary (plain text). Profiles can override it.
+summary: >-
+  PhD student at the Computer Vision Center (CVC) in the Vision, Language and Reading group,
+  researching multimodal models for document understanding: large-scale training of
+  vision-language models, agentic systems that reason and act over complex documents, and
+  efficient VLMs for long-context, multi-page document understanding.
+
+# Keyword tags under the CV header (profiles can replace them with `keywords:`).
+keywords: [Multimodal AI, Vision-Language Models, Document Understanding, Agentic AI, Large-Scale Training]
+
+emails:
+  work: allabres@cvc.uab.cat
+  personal: artemis.llabres@gmail.com
+site_email: work   # which email the website shows
+
+# Order here = order of links on the website. `site: false` hides a link on the website.
+links:
+  - {id: scholar, label: Google Scholar, url: "https://scholar.google.com/citations?user=0VToXYcAAAAJ"}
+  - {id: github, label: GitHub, url: "https://github.com/llabres", handle: llabres}
+  - {id: huggingface, label: Hugging Face, url: "https://huggingface.co/Llabres", handle: Llabres}
+  - {id: linkedin, label: LinkedIn, url: "https://www.linkedin.com/in/llabres/", handle: llabres}
+  - {id: orcid, label: ORCID, url: "https://orcid.org/0000-0002-6128-1796", handle: 0000-0002-6128-1796, site: false}

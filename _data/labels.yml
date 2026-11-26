@@ -1,0 +1,20 @@
+# Display labels shared by the website and AutoCV.
+badges:
+  oral: {label: Oral, class: oral}
+  best-student-paper: {label: Best Student Paper, class: award}
+  competition: {label: Competition, class: competition}
+  school: {label: School, class: school}
+  workshop: {label: Workshop, class: workshop}
+
+links:
+  paper: Paper
+  arxiv: arXiv
+  code: Code
+  site: Site
+  pdf: PDF
+  website: Website
+  post: Post
+  video: Video
+  slides: Slides
+  demo: Demo
+  data: Data

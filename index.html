@@ -1,147 +1,124 @@
+---
+# Content lives in _data/*.yml — this file is only the template.
+---
+{%- assign profile = site.data.profile -%}
+{%- assign labels = site.data.labels -%}
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Artemis Llabrés</title>
-  <meta name="description" content="Artemis Llabrés — PhD student at the Computer Vision Center (CVC) researching multimodal models for document understanding.">
+  <title>{{ profile.name }}</title>
+  <meta name="description" content="{{ profile.name }} — PhD student at the Computer Vision Center (CVC) researching multimodal models for document understanding.">
   <link rel="stylesheet" href="style.css">
   <base target="_blank">
 </head>
 <body>
   <main>
     <header class="about">
-      <img class="photo" src="assets/photo.jpg" alt="Photo of Artemis Llabrés" width="160" height="160" onerror="this.remove()">
+      <img class="photo" src="assets/photo.jpg" alt="Photo of {{ profile.name }}" width="160" height="160" onerror="this.remove()">
       <div>
-        <h1>Artemis Llabrés</h1>
-        <p class="role">PhD student · Computer Vision Center (CVC), Universitat Autònoma de Barcelona</p>
+        <h1>{{ profile.name }}</h1>
+        <p class="role">{{ profile.role }}</p>
+        {%- for paragraph in profile.bio %}
         <p>
-          I am part of the <a href="https://vlr.ai">Vision, Language, and Reading Group</a>,
-          where I research multimodal models for document understanding.
+          {{ paragraph }}
         </p>
-        <p>
-          My work focuses on large-scale training of vision-language models (VLMs), agentic AI systems
-          that can reason and act over complex documents, and efficient VLMs for long-context document
-          understanding, making it possible to process multi-page documents and large collections
-          without prohibitive compute costs.
-        </p>
+        {%- endfor %}
         <nav class="links">
-          <a href="mailto:allabres@cvc.uab.cat">Email</a>
-          <a href="https://scholar.google.com/citations?user=0VToXYcAAAAJ">Google Scholar</a>
-          <a href="https://github.com/llabres">GitHub</a>
-          <a href="https://huggingface.co/Llabres">Hugging Face</a>
-          <a href="https://www.linkedin.com/in/llabres/">LinkedIn</a>
+          <a href="mailto:{{ profile.emails[profile.site_email] }}">Email</a>
+          {%- for l in profile.links %}{% unless l.site == false %}
+          <a href="{{ l.url }}">{{ l.label }}</a>
+          {%- endunless %}{% endfor %}
         </nav>
       </div>
     </header>
 
     <nav class="tabs" role="tablist">
       <button role="tab" id="tab-publications" aria-controls="publications" aria-selected="true">Publications</button>
+      <button role="tab" id="tab-research" aria-controls="research" aria-selected="false">Research Topics</button>
+      <button role="tab" id="tab-projects" aria-controls="projects" aria-selected="false">Projects</button>
       <button role="tab" id="tab-events" aria-controls="events" aria-selected="false">Events</button>
       <button role="tab" id="tab-talks" aria-controls="talks" aria-selected="false">Talks</button>
     </nav>
 
     <section id="publications" role="tabpanel" aria-labelledby="tab-publications">
       <ul class="list">
+        {%- for p in site.data.publications %}{% unless p.site == false %}
         <li>
-          <span class="title">ICDAR 2026 Competition on Multimodal Reasoning over Documents in Multiple Domains</span>
-          <span class="authors"><b>Artemis Llabrés</b>, Marc Serra Ortega, Tomás Ockier, Samuel Ortega Cuadra, Amritpal Singh, Christos Georgakilas, Andrey Barsky, Ernest Valveny, Dimosthenis Karatzas</span>
-          <span class="venue">International Conference on Document Analysis and Recognition (ICDAR), 2026 <span class="badge oral">Oral</span></span>
-          <span class="pub-links"><a href="https://link.springer.com/chapter/10.1007/978-3-032-36042-7_20">[Paper]</a> <a href="https://arxiv.org/abs/2609.25055">[arXiv]</a></span>
+          <span class="title">{{ p.title }}</span>
+          <span class="authors">
+            {%- for a in p.authors -%}
+              {%- assign bare = a | remove: "*" -%}
+              {%- if bare == profile.name -%}<b>{{ bare }}</b>{%- if a contains "*" -%}*{%- endif -%}{%- else -%}{{ a }}{%- endif -%}
+              {%- unless forloop.last %}, {% endunless -%}
+            {%- endfor -%}
+            {%- if p.note %} <span class="note">({{ p.note }})</span>{% endif -%}
+          </span>
+          <span class="venue">{{ p.venue }}, {{ p.year }}
+            {%- for b in p.badges %} <span class="badge {{ labels.badges[b].class }}">{{ labels.badges[b].label }}</span>{% endfor -%}
+          </span>
+          <span class="pub-links">
+            {%- for link in p.links -%}
+              <a href="{{ link[1] }}">[{{ labels.links[link[0]] | default: link[0] }}]</a>{% unless forloop.last %} {% endunless %}
+            {%- endfor -%}
+          </span>
         </li>
-        <li>
-          <span class="title">AdaNav: Query-Adaptive Multi-granularity Navigation for Long Document Understanding</span>
-          <span class="authors">Yiming Xu, Eric López, <b>Artemis Llabrés</b>, Maximiliano Hormazábal, Ernest Valveny, Dimosthenis Karatzas</span>
-          <span class="venue">International Conference on Document Analysis and Recognition (ICDAR), 2026 <span class="badge oral">Oral</span></span>
-          <span class="pub-links"><a href="https://link.springer.com/chapter/10.1007/978-3-032-36023-6_4">[Paper]</a></span>
-        </li>
-        <li>
-          <span class="title">Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections</span>
-          <span class="authors">Łukasz Borchmann, Jordy Van Landeghem, Michał Turski, Shreyansh Padarha, Ryan Othniel Kearns, Adam Mahdi, Niels Rogge, Clémentine Fourrier, Siwei Han, Huaxiu Yao, <b>Artemis Llabrés</b>, Yiming Xu, Dimosthenis Karatzas, Hao Zhang, Anupam Datta</span>
-          <span class="venue">International Conference on Machine Learning (ICML), 2026 <span class="badge oral">Oral</span></span>
-          <span class="pub-links"><a href="https://icml.cc/virtual/2026/oral/71033">[ICML]</a> <a href="https://arxiv.org/abs/2603.12180">[arXiv]</a></span>
-        </li>
-        <li>
-          <span class="title">CoSMo: A Multimodal Transformer for Page Stream Segmentation in Comic Books</span>
-          <span class="authors">Marc Serra Ortega, Emanuele Vivoli, <b>Artemis Llabrés</b>, Dimosthenis Karatzas</span>
-          <span class="venue">IEEE/CVF International Conference on Computer Vision Workshops (ICCVW), 2025</span>
-          <span class="pub-links"><a href="https://ieeexplore.ieee.org/abstract/document/11375802/">[Paper]</a> <a href="https://arxiv.org/abs/2507.10053">[arXiv]</a></span>
-        </li>
-        <li>
-          <span class="title">Enhancing Document VQA Models via Retrieval-Augmented Generation</span>
-          <span class="authors">Eric López, <b>Artemis Llabrés</b>, Ernest Valveny</span>
-          <span class="venue">International Conference on Document Analysis and Recognition (ICDAR), 2025</span>
-          <span class="pub-links"><a href="https://link.springer.com/chapter/10.1007/978-3-032-09368-4_6">[Paper]</a> <a href="https://arxiv.org/abs/2508.18984">[arXiv]</a></span>
-        </li>
-        <li>
-          <span class="title">ComicsPAP: Understanding Comic Strips by Picking the Correct Panel</span>
-          <span class="authors">Emanuele Vivoli*, <b>Artemis Llabrés</b>*, Mohamed Ali Souibgui, Marco Bertini, Ernest Valveny, Dimosthenis Karatzas <span class="note">(*contributed equally)</span></span>
-          <span class="venue">International Conference on Document Analysis and Recognition (ICDAR), 2025 <span class="badge oral">Oral</span></span>
-          <span class="pub-links"><a href="https://link.springer.com/chapter/10.1007/978-3-032-04614-7_19">[Paper]</a> <a href="https://arxiv.org/abs/2503.08561">[arXiv]</a></span>
-        </li>
-        <li>
-          <span class="title">One Missing Piece in Vision and Language: A Survey on Comics Understanding</span>
-          <span class="authors">Emanuele Vivoli, Mohamed Ali Souibgui, Andrey Barsky, <b>Artemis Llabrés</b>, Marco Bertini, Dimosthenis Karatzas</span>
-          <span class="venue">arXiv preprint, 2024</span>
-          <span class="pub-links"><a href="https://arxiv.org/abs/2409.09502">[arXiv]</a></span>
-        </li>
-        <li>
-          <span class="title">Image-Text Matching for Large-Scale Book Collections</span>
-          <span class="authors"><b>Artemis Llabrés</b>, Arka Ujjal Dey, Dimosthenis Karatzas, Ernest Valveny</span>
-          <span class="venue">International Workshop on Document Analysis Systems (DAS), 2024 <span class="badge award">Best Student Paper</span></span>
-          <span class="pub-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-70442-0_6">[Paper]</a> <a href="https://arxiv.org/abs/2407.19812">[arXiv]</a></span>
-        </li>
-        <li>
-          <span class="title">Retrieval Augmented Verification for Zero-Shot Detection of Multimodal Disinformation</span>
-          <span class="authors">Arka Ujjal Dey, <b>Artemis Llabrés</b>, Ernest Valveny, Dimosthenis Karatzas</span>
-          <span class="venue">arXiv preprint, 2024</span>
-          <span class="pub-links"><a href="https://arxiv.org/abs/2404.10702">[arXiv]</a></span>
-        </li>
+        {%- endunless %}{% endfor %}
       </ul>
+    </section>
+
+    <section id="research" role="tabpanel" aria-labelledby="tab-research" hidden>
+      {%- include project-list.html kind="topic" %}
+    </section>
+
+    <section id="projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
+      {%- include project-list.html kind="project" %}
     </section>
 
     <section id="events" role="tabpanel" aria-labelledby="tab-events" hidden>
       <ul class="list">
+        {%- for e in site.data.events %}{% unless e.site == false %}
         <li>
-          <span class="title">ICDAR 2026 Competition on Multimodal Reasoning over Documents in Multiple Domains</span>
-          <span class="authors">Lead organizer</span>
-          <span class="venue">International Conference on Document Analysis and Recognition (ICDAR), 2026 <span class="badge competition">Competition</span></span>
-          <span class="pub-links"><a href="https://www.docvqa.org/challenges/2026">[Website]</a></span>
+          <span class="title">{{ e.title }}</span>
+          <span class="authors">{{ e.role }}</span>
+          <span class="venue">{{ e.venue }} <span class="badge {{ labels.badges[e.kind].class }}">{{ labels.badges[e.kind].label }}</span></span>
+          <span class="pub-links">
+            {%- for link in e.links -%}
+              <a href="{{ link[1] }}">[{{ labels.links[link[0]] | default: link[0] }}]</a>{% unless forloop.last %} {% endunless %}
+            {%- endfor -%}
+          </span>
         </li>
-        <li>
-          <span class="title">6th IAPR TC10/TC11 Summer School on Document Analysis</span>
-          <span class="authors">Co-organizer</span>
-          <span class="venue">Vall de Núria, Catalonia, May 2026 <span class="badge school">School</span></span>
-          <span class="pub-links"><a href="https://ssdag.cvc.uab.es/">[Website]</a></span>
-        </li>
-        <li>
-          <span class="title">ComIQ Workshop</span>
-          <span class="authors">Co-organizer</span>
-          <span class="venue">IEEE/CVF International Conference on Computer Vision (ICCV), 2025 <span class="badge workshop">Workshop</span></span>
-          <span class="pub-links"><a href="https://comiq-iccv25.github.io/">[Website]</a></span>
-        </li>
+        {%- endunless %}{% endfor %}
       </ul>
     </section>
 
     <section id="talks" role="tabpanel" aria-labelledby="tab-talks" hidden>
       <ul class="list">
+        {%- for t in site.data.talks %}{% unless t.site == false %}
         <li>
-          <span class="title">AgriFM-M: Making Sense of Agricultural Management Knowledge through Document Understanding</span>
-          <span class="authors">Introducing AgriScienceFM | AI Foundation Models for Agricultural Sciences – Webinar</span>
-          <span class="venue">Online, September 2026</span>
-          <span class="pub-links"><a href="https://www.linkedin.com/posts/llabres_how-much-knowledge-is-already-there-but-share-7506635653925781506-1M3L/">[Post]</a> <a href="https://www.youtube.com/watch?v=oaaRMm7LTsA">[Video]</a></span>
+          <span class="title">{{ t.title }}</span>
+          <span class="authors">
+            {%- if t.authors -%}
+              {%- for a in t.authors -%}
+                {%- if a == profile.name -%}<b>{{ a }}</b>{%- else -%}{{ a }}{%- endif -%}
+                {%- unless forloop.last %}, {% endunless -%}
+              {%- endfor -%}
+            {%- else -%}{{ t.event }}{%- endif -%}
+          </span>
+          <span class="venue">{{ t.place }}</span>
+          <span class="pub-links">
+            {%- for link in t.links -%}
+              <a href="{{ link[1] }}">[{{ labels.links[link[0]] | default: link[0] }}]</a>{% unless forloop.last %} {% endunless %}
+            {%- endfor -%}
+          </span>
         </li>
-        <li>
-          <span class="title">HPC@CVC Lessons on Scaling Up: From 1 GPU to 100s</span>
-          <span class="authors"><b>Artemis Llabrés</b>, Tomás Ockier, Marc Serra Ortega</span>
-          <span class="venue">Computer Vision Center (CVC), May 2026</span>
-          <span class="pub-links"><a href="https://www.linkedin.com/feed/update/urn:li:activity:7465794139306020864/">[Post]</a></span>
-        </li>
+        {%- endunless %}{% endfor %}
       </ul>
     </section>
   </main>
 
-  <footer>© 2026 Artemis Llabrés</footer>
+  <footer>© {{ site.time | date: "%Y" }} {{ profile.name }}</footer>
 
   <script>
     const tabs = document.querySelectorAll('[role="tab"]');

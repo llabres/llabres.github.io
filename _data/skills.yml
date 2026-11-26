@@ -1,0 +1,18 @@
+# CV ONLY — not shown on the website.
+# Skill groups: each has an id (for profile filtering/overrides), a label and items.
+groups:
+  - id: programming
+    label: Programming
+    items: [Python, C, C++, R, Java]
+  - id: ml-stack
+    label: ML Stack
+    items: [PyTorch, Transformers]
+  - id: hpc
+    label: Infrastructure
+    items: [Multi-node GPU training, Slurm, EuroHPC clusters]
+
+languages:
+  - {language: Catalan, level: Native}
+  - {language: Spanish, level: Native}
+  - {language: English, level: Advanced (C1)}
+  - {language: Japanese, level: Beginner (A1)}

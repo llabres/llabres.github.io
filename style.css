@@ -78,6 +78,9 @@ h1 { margin: 0; font-size: 2rem; }
 .list .authors b { color: var(--text); }
 .list .note { display: inline; font-size: 0.85rem; font-style: italic; }
 .pub-links { font-size: 0.9rem; }
+.list .desc { margin: 4px 0; }
+.list .related { font-size: 0.9rem; color: var(--muted); }
+.list .related .where { display: inline; }
 .list .badge {
   display: inline-block;
   white-space: nowrap;

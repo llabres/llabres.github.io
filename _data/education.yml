@@ -1,0 +1,26 @@
+# CV ONLY — not shown on the website. Newest first.
+- id: phd
+  degree: PhD in Computer Science
+  institution: Universitat Autònoma de Barcelona · Computer Vision Center
+  location: Barcelona, Spain
+  start: 2024-09
+  end: present
+  advisors: [Dimosthenis Karatzas, Ernest Valveny]
+
+- id: msc
+  degree: "Master's Degree in Research and Innovation in Computer-based Science and Engineering"
+  institution: Universitat Autònoma de Barcelona
+  location: Barcelona, Spain
+  start: 2023-09
+  end: 2024-07
+  grade: 9.58/10
+  thesis: msc-thesis
+
+- id: bsc
+  degree: "Bachelor's Degree in Computational Mathematics and Data Analytics"
+  institution: Universitat Autònoma de Barcelona
+  location: Barcelona, Spain
+  start: 2018-09
+  end: 2022-07
+  grade: 8.68/10
+  thesis: bsc-thesis

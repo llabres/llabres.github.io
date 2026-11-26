@@ -1,0 +1,58 @@
+# CV ONLY — not shown on the website.
+# Organisations newest first; each has roles newest first.
+# Each role can have:
+#   projects:   ids from projects.yml (named/funded work; shown as CV bullets using cv_text)
+#   highlights: plain bullets for tasks that aren't projects — {id, text}, id needed for overrides
+#   hide_refs:  (on an org, role, highlight or project) drop its refs from every CV: true | [talk] | [ref ids]
+# Dates: "YYYY-MM"; end: present for ongoing.
+
+- id: cvc
+  org: Computer Vision Center (CVC)
+  location: Barcelona, Spain
+  start: 2021-11
+  end: present
+  roles:
+    - id: cvc-predoc
+      title: Predoctoral Researcher (PhD Student)
+      start: 2024-09
+      end: present
+      projects: [elliot, agrisciencefm, comics-ai]
+
+    - id: cvc-research-engineer
+      title: Research Engineer
+      start: 2022-09
+      end: 2024-08
+      highlights:
+        - id: Long-Context VLMs
+          text: "Efficient long-context vision-language models for document understanding"
+          refs: [msc-thesis]
+      projects: [library-inventory, remiss]
+      
+
+    - id: cvc-internship
+      title: Research Intern
+      start: 2021-11
+      end: 2022-08
+      part_time: true
+      highlights:
+        - id: multitask-docu
+          text: "Multi-task models for document understanding"
+          refs: [bsc-thesis]
+
+- id: gici
+  org: Group of Interactive Coding of Images (GICI), UAB
+  location: Barcelona, Spain
+  start: 2021-01
+  end: 2023-11
+  roles:
+    - id: gici-research-engineer
+      title: Research Engineer
+      start: 2021-01
+      end: 2023-11
+      part_time: true
+      projects: [clearfarm]
+      highlights:
+        - id: satellite-coding
+          text: Research and development of coding techniques for satellite imagery.
+        - id: remote-sensing-dl
+          text: Deep learning algorithms for remote sensing.

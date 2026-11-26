@@ -1,0 +1,116 @@
+# Projects: named or funded research efforts. Shown in the website "Research Projects" tab and,
+# on the CV, as bullets under the role(s) in experience.yml that list their id
+# (or as their own section when a profile adds `projects` to `sections`).
+#
+# Fields:
+#   id           unique; referenced from experience.yml roles and AutoCV profiles
+#   kind         project = a named/funded project (Research Projects tab); topic = a research line
+#                you work on, e.g. comics, agents (Research Areas tab). Default: project
+#   title        project / topic name
+#   start, end   "YYYY-MM" or "YYYY"; end: present for ongoing (both optional)
+#   funder       grant / funding body (optional)
+#   description  website paragraph (HTML allowed)
+#   cv_text      one-line CV bullet
+#   refs         related publication / talk / event / code ids (code.yml) (listed on the website, "→ venue" links on the CV)
+#   hide_refs    true | [talk, event, publication, code] | [ref ids] — keep refs on the website but hide them on every CV
+#   links        {website, code, demo, ...} (labels in labels.yml)
+#   site         false = CV only
+#   tags         free-form, for CV filtering
+#
+
+## Projects (kind: project)
+
+- id: elliot
+  kind: project
+  title: ELLIOT - European Large Open Multi-Modal Foundation Models for Robust Generalization on Arbitrary Data Streams
+  funder: Horizon Europe
+  start: 2025-06
+  end: 2029-06
+  description: >-
+    My work: Large-scale training of multimodal foundation models.
+  cv_text: "[ELLIOT] Large-scale training of multimodal foundation models."
+  refs: [hpc-scaling, vlm-training]
+
+- id: agrisciencefm
+  kind: project
+  title: AgriScienceFM - AI Foundation Models in Agricultural Sciences.
+  funder: Horizon Europe
+  start: 2026-06
+  end: 2029-05
+  description: >-
+    My work: Training AgriFM-M an agentic multimodal foundation model for agricultural sciences.
+  cv_text: "[AgriScienceFM] Training AgriFM-M an agentic multimodal foundation model for agricultural sciences."
+  refs: [agrifm-webinar]
+
+- id: library-inventory
+  kind: project
+  title: Smart Product Identification for Industry and Commerce
+  funder: Spanish State Research Agency (AEI)
+  start: 2022-09
+  end: 2024-08
+  description: >-
+    My work: Vision and language fusion to automatically match shelf images with catalogue records,
+    for inventory of large book collections and supermarkets.
+  cv_text: Vision and language fusion for automatic inventory of libraries and supermarkets.
+  refs: [image-text-matching-books]
+  tags: [retrieval]
+
+- id: remiss
+  kind: project
+  title: REMISS – Towards a methodology to reduce misinformation spread about vulnerable and stigmatised groups
+  funder: Spanish State Research Agency (AEI)
+  start: 2022-09
+  end: 2023-12
+  description: >-
+    My work: Retrieval-augmented, zero-shot verification of image–text social media posts against external evidence.
+  cv_text: Automatic verification of multimodal social media posts.
+  refs: [rav-disinformation]
+  tags: [disinformation, retrieval]
+
+- id: clearfarm
+  kind: project
+  title: CLEARFARM Co-designed welfare monitoring platform for pig and dairy cattle
+  funder: Horizon 2020
+  description: >-
+    My work: Designing and implementing machine learning models for animal welfare monitoring in precision livestock farming.
+  cv_text: Designed and trained machine learning models for animal welfare in the ClearFarm project.
+  refs: []
+  tags: [industry]
+  site: false
+
+## Research topics (kind: topic)
+
+- id: agentic-ai
+  kind: topic
+  title: Agentic AI for Document Understanding
+  start: 2025-01
+  end: present
+  description: >-
+    Exploring the use of agentic AI for understanding and processing large document collections.
+  cv_text: Agentic AI for long-context document understanding.
+  refs: [strategic-navigation, adanav]
+  tags: [docvqa, retrieval]
+
+- id: comics-ai
+  kind: topic
+  title: Comics Understanding
+  start: 2024-09
+  end: 2025-08
+  description: >-
+    Multimodal AI for comics: understanding sequential visual narratives, panel ordering and
+    page stream segmentation.
+  cv_text: Comics understanding with multimodal AI.
+  refs: [comicspap, cosmo, comics-survey]
+  tags: [comics]
+
+- id: long-context-vlm
+  kind: topic
+  title: Efficient Vision-Language Models for Long-Context Document Understanding
+  start: 2024-01
+  end: 2024-09
+  description: >-
+    Vision-language models with Global-Local attention that can process multi-page documents and large document
+    collections without prohibitive compute costs.
+  cv_text: Vision-language models with Global-Local attention for efficient long-context document understanding.
+  refs: [msc-thesis]
+  tags: [docvqa, long-context]

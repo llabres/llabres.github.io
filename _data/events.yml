@@ -1,0 +1,27 @@
+# Organised events (website "Events" tab). kind: competition | school | workshop
+- id: icdar26-competition-org
+  title: ICDAR 2026 Competition on Multimodal Reasoning over Documents in Multiple Domains
+  role: Lead organizer
+  venue: International Conference on Document Analysis and Recognition (ICDAR), 2026
+  year: 2026
+  kind: competition
+  links:
+    website: https://www.docvqa.org/challenges/2026
+
+- id: ssdag-2026
+  title: 6th IAPR TC10/TC11 Summer School on Document Analysis
+  role: Co-organizer
+  venue: Vall de Núria, Catalonia, May 2026
+  year: 2026
+  kind: school
+  links:
+    website: https://ssdag.cvc.uab.es/
+
+- id: comiq-iccv25
+  title: ComIQ Workshop
+  role: Co-organizer
+  venue: IEEE/CVF International Conference on Computer Vision (ICCV), 2025
+  year: 2025
+  kind: workshop
+  links:
+    website: https://comiq-iccv25.github.io/

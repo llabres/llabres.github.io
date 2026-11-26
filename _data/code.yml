@@ -1,0 +1,8 @@
+# Code repositories that projects / highlights can reference via `refs: [id]`.
+# Shown as "Related" links on the website's project list and as "→ Code" links on the CV.
+#   id     unique
+#   title  repository name shown as the link text
+#   url    repository URL
+- id: vlm-training
+  title: vlm-training
+  url: https://github.com/VLR-CVC/vlm-training
